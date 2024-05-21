@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>核心语法</title>
+</head>
+
+<body>
+    <h1>ES6 核心语法测试</h1>
+
+    <h2>ECMAScript（ES） 是规范、 JavaScript 是 ES 的实现</h2>
+    <h2>ES6 的第一个版本 在 2015 年 6 月发布，正式名称是《ECMAScript 2015 标准》（简称 ES2015）</h2>
+    <h2>ES6 指是 5.1 版以后的 JavaScript 的下一代标准，涵盖了 ES2015、ES2016、ES2017 等等</h2>
+
+</body>
+<script>
+    //声明变量两种方式
+    var a = 'haha';
+    let b = 'hello';
+
+    //推荐使用let关键字替代 var关键字声明变量，因为 var存在诸多问题，比如：
+
+    //问题1.越域
+    {
+        var var_a = 'nb';
+        let let_a = "wc";
+    }
+    console.log('读取到的var_a:' + var_a);//读取到代码块中的内容
+    console.log('读取到的let_a:' + let_a);//直接报错
+
+    //问题2.重复声明
+    var var_b = 1;
+    var var_b = '2';
+    var var_b = false;
+    //使用let不可以重复声明
+    // let let_b = 1;
+    // let let_b = 3;
+
+
+    //问题3.变量提升
+    console.log(var_c);//可以在变量前读取
+    var var_c = "hello world";
+
+    console.log(let_c);
+    let let_c = 9;
+
+
+
+
+
+
+
+    //常量声明 const
+    // 1. 声明之后不允许改变
+    // 2. 一但声明必须初始化，否则会报错
+    const wc = 'wc';
+    wc = false;   //Uncaught TypeError: Assignment to constant variable.
+
+
+</script>
+
+</html>

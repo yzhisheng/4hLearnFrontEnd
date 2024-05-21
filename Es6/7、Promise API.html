@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>核心语法</title>
+</head>
+
+<body>
+    <h1>ES6 核心语法测试</h1>
+
+    <h2>ECMAScript（ES） 是规范、 JavaScript 是 ES 的实现</h2>
+    <h2>ES6 的第一个版本 在 2015 年 6 月发布，正式名称是《ECMAScript 2015 标准》（简称 ES2015）</h2>
+    <h2>ES6 指是 5.1 版以后的 JavaScript 的下一代标准，涵盖了 ES2015、ES2016、ES2017 等等</h2>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+</body>
+<script>
+    // 代表 异步对象，类似Java中的 CompletableFuture
+    // Promise 是现代 JavaScript 中异步编程的基础，是一个由异步函数返回的可以向我们指示
+    //      当前操作所处的状态的对象。在 Promise 返回给调用者的时候，操作往往还没有完成，
+    //      但 Promise 对象可以让我们操作最终完成时对其进行处理（无论成功还是失败）
+    // fetch 是浏览器支持从远程获取数据的一个函数，这个函数返回的就是 Promise 对象
+
+    console.log('开始请求....')
+    const fetchPromise = fetch(
+        "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json"
+    );
+
+    console.log('响应对象', fetchPromise);
+    console.log('不同步等待响应结果....')
+    fetchPromise.then((response) => {
+        // console.log(`已收到响应：${response.status}`);
+    });
+
+    console.log("已发送请求……");
+
+
+    //通过 fetch() API 得到一个 Response 对象；
+    // response.status： 读取响应状态码
+    //response.json()：读取响应体json数据；（这也是个异步对象）
+
+    const fetchPromise1 = fetch(
+        "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json",
+    );
+
+    fetchPromise1.then((response) => {
+        const jsonPromise = response.json();
+        jsonPromise.then((json) => {
+            // console.log('响应数据', json)
+            // console.log(json[0].name);
+        });
+    });
+
+
+    //Promise状态
+    //首先，Promise 有三种状态：
+    // 待定（pending）：初始状态，既没有被兑现，也没有被拒绝。这是调用 fetch() 返回 Promise 时的状态，此时请求还在进行中。
+    //已兑现（fulfilled）：意味着操作成功完成。当 Promise 完成时，它的 then() 处理函数被调用。
+    // 已拒绝（rejected）：意味着操作失败。当一个 Promise 失败时，它的 catch () 处理函数被调用。
+
+    //TODO 自己定义一个Promise对象
+    // const promise = new Promise((resolve, reject) => {
+    //     // 执行异步操作
+    //     if (/* 异步操作成功 */) {
+    //         resolve(value);// 调用 resolve，代表 Promise 将返回成功的结果
+    //     } else {
+    //         reject(error);// 调用 reject，代表 Promise 会返回失败结果
+    //     }
+    // });
+
+
+    //使用Promise封装老式api
+    console.log('使用Promise封装老式api')
+    let get = function (url, data) {
+        return new Promise((resolve, reject) => {
+            $.ajax({
+                url: url,
+                type: "GET",
+                data: data,
+                success(result) {
+                    resolve(result);
+                },
+                error(error) {
+                    reject(error);
+                }
+            });
+        })
+    }
+    let url = "https://mdn.github.io123/learning-area/javascript/apis/fetching-data/can-store/products.json"
+    get(url).then(resp => {
+        console.log('使用Promise封装老式api响应结果:', resp);
+    }).catch(err => {
+        console.log('使用Promise封装老式api响应异常结果:', err);
+    })
+</script>
+
+</html>

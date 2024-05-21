@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>核心语法</title>
+</head>
+
+<body>
+    <h1>ES6 核心语法测试</h1>
+
+    <h2>ECMAScript（ES） 是规范、 JavaScript 是 ES 的实现</h2>
+    <h2>ES6 的第一个版本 在 2015 年 6 月发布，正式名称是《ECMAScript 2015 标准》（简称 ES2015）</h2>
+    <h2>ES6 指是 5.1 版以后的 JavaScript 的下一代标准，涵盖了 ES2015、ES2016、ES2017 等等</h2>
+
+</body>
+<script>
+    //解构,分为数组解构和对象解构
+
+    //数组解构
+    let arr = [0, 1, 2];
+    console.log('原始写法获取数组内容：arr[0]=' + arr[0]);//原始写法,使用下标获取
+    //使用解构
+    let [a, b, c] = arr;
+    console.log(a);
+    console.log(b);
+    console.log(c);
+
+
+
+    //对象解构
+    let person = {
+        name: "账号",
+        age: 18,
+        email: 'abc@qq.com'
+    }
+    console.log('原始方法读取对象的属性:person.name=' + person.name);
+    //使用解构
+    let { name, age } = person;
+    console.log(name);
+    console.log(age);
+
+    //也可以对方法入参进行结构写法
+    function print({ name, age }) {
+        console.log('name=' + name + ',age=' + age)
+    }
+
+    print(person);
+</script>
+
+</html>

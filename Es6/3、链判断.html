@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>核心语法</title>
+</head>
+
+<body>
+    <h1>ES6 核心语法测试</h1>
+
+    <h2>ECMAScript（ES） 是规范、 JavaScript 是 ES 的实现</h2>
+    <h2>ES6 的第一个版本 在 2015 年 6 月发布，正式名称是《ECMAScript 2015 标准》（简称 ES2015）</h2>
+    <h2>ES6 指是 5.1 版以后的 JavaScript 的下一代标准，涵盖了 ES2015、ES2016、ES2017 等等</h2>
+
+</body>
+<script>
+    //如果读取对象内部的某个属性，往往需要判断一下，属性的上层对象是否存在。
+    //比如，读取message.body.user.firstName这个属性，安全的写法是写成下面这样。
+
+    let message = null;
+    // 错误的写法
+    // const firstName = message.body.user.firstName || 'default';//body属性可能没有，会报错
+
+    // 正确的写法
+    const firstName = (message
+        && message.body
+        && message.body.user
+        && message.body.user.firstName) || 'default';
+    console.log(firstName); //这样的层层判断非常麻烦
+
+
+    //因此 ES2020 引入了“链判断运算符”（optional chaining operator）?.，简化上面的写法。
+    const firstName1 = message?.body?.user?.firstName1 || 'default';
+
+
+</script>
+
+</html>

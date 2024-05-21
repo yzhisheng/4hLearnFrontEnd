@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>核心语法</title>
+</head>
+
+<body>
+    <h1>ES6 核心语法测试</h1>
+
+    <h2>ECMAScript（ES） 是规范、 JavaScript 是 ES 的实现</h2>
+    <h2>ES6 的第一个版本 在 2015 年 6 月发布，正式名称是《ECMAScript 2015 标准》（简称 ES2015）</h2>
+    <h2>ES6 指是 5.1 版以后的 JavaScript 的下一代标准，涵盖了 ES2015、ES2016、ES2017 等等</h2>
+
+</body>
+<script>
+    //在 ES6 以前，我们无法给一个函数参数设置默认值，只能采用变通写法：
+    function add(a, b) {
+        // 判断 b 是否为空，为空就给默认值 1
+        b = b || 1;
+        return a + b;
+    }
+    // 传一个参数
+    console.log(add(10));
+
+    //现在可以这么写：直接给参数写上默认值，没传就会自动使用默认值
+    //TODO 需要将没有默认值的参数放在有默认值的前面
+    function add2(a, b = 1) {
+        return a + b;
+    }
+
+    // 传一个参数
+    console.log(add2(10));
+
+
+
+</script>
+
+</html>

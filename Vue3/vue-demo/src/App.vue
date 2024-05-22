@@ -6,6 +6,7 @@ import Xiangying from './components/4.响应式.vue'
 import Form from './components/5.表单绑定.vue'
 import JiSuan from './components/6.计算属性.vue'
 import JianTing from './components/7.监听.vue'
+import Life from './components/8.声明周期.vue'
 </script>
 
 <template>
@@ -16,7 +17,8 @@ import JianTing from './components/7.监听.vue'
   <!-- <Xiangying /> -->
   <!-- <Form /> -->
   <!-- <JiSuan /> -->
-  <JianTing />
+  <!-- <JianTing /> -->
+  <Life />
 </template>
 
 <style scoped></style>

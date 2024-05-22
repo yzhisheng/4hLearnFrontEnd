@@ -3,6 +3,7 @@ import ChaZhi from './components/1.插值表达式.vue'
 import ZhiLing from './components/2.指令.vue'
 import BangDing from './components/3.属性绑定.vue'
 import Xiangying from './components/4.响应式.vue'
+import Form from './components/5.表单绑定.vue'
 </script>
 
 <template>
@@ -10,7 +11,8 @@ import Xiangying from './components/4.响应式.vue'
   <!-- <ChaZhi /> -->
   <!-- <ZhiLing /> -->
   <!-- <BangDing /> -->
-  <Xiangying />
+  <!-- <Xiangying /> -->
+  <Form />
 </template>
 
 <style scoped></style>

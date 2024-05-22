@@ -13,6 +13,8 @@ let msg = `<p style='color: red'> hello world!</p>`
 function buy() {
     alert("已购买!")
 }
+
+let fruits = ["苹果", "香蕉", "车厘子", "甘蔗", "水蜜桃"]
 </script>
 
 
@@ -37,6 +39,9 @@ function buy() {
     <h1>指令三: v-if 和 v-for</h1>
     <span style="color: red" v-if="car.price > 900">雷子,你卖贵了</span>
     <span style="color: green" v-if="car.price <= 900">雷总,你是我滴神</span>
+
+    <div>原始数组:{{ fruits }}</div>
+    <li v-for="(fruit, index) in fruits">索引:{{ index }},水果:{{ fruit }}</li>
 </template>
 
 <style scoped></style>

@@ -4,6 +4,7 @@ import ZhiLing from './components/2.指令.vue'
 import BangDing from './components/3.属性绑定.vue'
 import Xiangying from './components/4.响应式.vue'
 import Form from './components/5.表单绑定.vue'
+import JiSuan from './components/6.计算属性.vue'
 </script>
 
 <template>
@@ -12,7 +13,8 @@ import Form from './components/5.表单绑定.vue'
   <!-- <ZhiLing /> -->
   <!-- <BangDing /> -->
   <!-- <Xiangying /> -->
-  <Form />
+  <!-- <Form /> -->
+  <JiSuan />
 </template>
 
 <style scoped></style>

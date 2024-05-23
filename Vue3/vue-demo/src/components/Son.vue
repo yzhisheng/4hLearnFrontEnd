@@ -19,6 +19,15 @@ let props = defineProps({
     }
 })
 
+
+//子传父 使用emit:定义事件
+let emits = defineEmits(['buy']);
+function buy() {
+    alert("我要买辣条!")
+    emits('buy', 100)
+}
+
+
 </script>
 
 
@@ -27,9 +36,7 @@ let props = defineProps({
         <p>我是{{ name }},我老爸是{{ fatherName }}</p>
         <p>我爸的车:{{ car }}</p>
         <p>我爸的账户余额:{{ money }}</p>
-        <!-- <button @ckick="buy">买包辣条-100</button> -->
-
-
+        <button @click="buy">买包辣条-100</button>
     </div>
 </template>
 

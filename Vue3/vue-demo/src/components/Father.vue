@@ -20,6 +20,14 @@ function addMoney() {
 function reduceMoney() {
     data.money -= 200;
 }
+
+function kouKuan(arg) {
+    if (data.money < arg) {
+        alert("一包辣条【" + arg + "】，wc,不买了!")
+    } else {
+        data.money -= arg;
+    }
+}
 </script>
 
 
@@ -31,7 +39,7 @@ function reduceMoney() {
         <button @click="reduceMoney">老板扣钱了-200</button>
 
         <!-- <Son :fatherName="name" :money="data.money" :car="data.car" /> -->
-        <Son :fatherName="name" v-bind="data" />
+        <Son :fatherName="name" v-bind="data" @buy="kouKuan" />
     </div>
 </template>
 

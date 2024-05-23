@@ -8,6 +8,7 @@ import JiSuan from './components/6.计算属性.vue'
 import JianTing from './components/7.监听.vue'
 import Life from './components/8.声明周期.vue'
 import FatherToChild from './components/9.组件传值(父传子,单向数据流).vue'
+import ChaCao from './components/11.插槽.vue'
 </script>
 
 <template>
@@ -20,7 +21,8 @@ import FatherToChild from './components/9.组件传值(父传子,单向数据流
   <!-- <JiSuan /> -->
   <!-- <JianTing /> -->
   <!-- <Life /> -->
-  <FatherToChild />
+  <!-- <FatherToChild /> -->
+  <ChaCao />
 </template>
 
 <style scoped></style>

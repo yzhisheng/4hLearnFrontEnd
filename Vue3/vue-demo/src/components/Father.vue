@@ -33,11 +33,14 @@ function kouKuan(arg) {
 
 <template>
     <div style="background-color: palevioletred;">
+        <h3>
+            <slot>插槽没传，默认值</slot>
+        </h3>
         <p>我是{{ name }}</p>
         <p>我的账户余额:{{ data.money }}</p>
         <button @click="addMoney">发工资了+200</button>
         <button @click="reduceMoney">老板扣钱了-200</button>
-
+        <slot name="btn" />
         <!-- <Son :fatherName="name" :money="data.money" :car="data.car" /> -->
         <Son :fatherName="name" v-bind="data" @buy="kouKuan" />
     </div>

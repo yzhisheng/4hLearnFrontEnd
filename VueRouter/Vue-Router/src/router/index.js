@@ -9,6 +9,22 @@ const routes = [
     { path: '/hello', component: () => import("../views/Hello.vue") },
     { path: '/sayHi', component: () => import("../views/SayHi.vue") },
     { path: '/pathParameter/:id', component: () => import("../views/PathParameter.vue") },
+    {
+        path: '/welcome/:id',
+        component: () => import("../views/email/Welcome.vue"),
+        children: [
+            {
+                path: 'profile',
+                component: () => import("../views/email/UserProfile.vue")
+            },
+            {
+                path: 'posts',
+                component: () => import("../views/email/UserPosts.vue")
+            },
+        ]
+    },
+
+
 ]
 
 

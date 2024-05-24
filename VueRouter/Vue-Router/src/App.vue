@@ -10,7 +10,8 @@ import router from './router';
   <nav>
     <RouterLink to="/">Go to Home</RouterLink> <br>
     <RouterLink to="/hello">Go to Hello</RouterLink> <br>
-    <RouterLink to="/sayHi">Go to SayHi</RouterLink>
+    <RouterLink to="/sayHi">Go to SayHi</RouterLink><br>
+    <RouterLink to="/pathParameter/007">路径传参:007</RouterLink>
   </nav>
   <hr />
   <!-- 路由视图展示 -->

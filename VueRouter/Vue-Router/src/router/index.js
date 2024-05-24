@@ -8,6 +8,7 @@ const routes = [
     // { path: '/hello', component: Hello },
     { path: '/hello', component: () => import("../views/Hello.vue") },
     { path: '/sayHi', component: () => import("../views/SayHi.vue") },
+    { path: '/pathParameter/:id', component: () => import("../views/PathParameter.vue") },
 ]
 
 

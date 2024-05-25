@@ -13,7 +13,8 @@ import router from './router';
     <RouterLink to="/hello">Go to Hello</RouterLink> <br>
     <RouterLink to="/sayHi">Go to SayHi</RouterLink><br>
     <RouterLink to="/pathParameter/007">路径传参:007</RouterLink><br>
-    <RouterLink to="/welcome/007">嵌套路由,用户中心</RouterLink>
+    <RouterLink to="/welcome/007/007/007">嵌套路由</RouterLink><br>
+    <RouterLink to="/paramTest/007/007/007">路由传参</RouterLink><br>
   </nav>
   <hr />
   <!-- 路由视图展示 -->

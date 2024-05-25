@@ -10,8 +10,8 @@ const routes = [
     { path: '/sayHi', component: () => import("../views/SayHi.vue") },
     { path: '/pathParameter/:id', component: () => import("../views/PathParameter.vue") },
     {
-        path: '/welcome/:id',
-        component: () => import("../views/email/Welcome.vue"),
+        path: '/welcome/:id/:name/:age',
+        component: () => import("../views/Welcome.vue"),
         children: [
             {
                 path: 'profile',
@@ -20,6 +20,24 @@ const routes = [
             {
                 path: 'posts',
                 component: () => import("../views/email/UserPosts.vue")
+            },
+
+        ]
+    },
+    {
+        path: '/paramTest/:id/:name/:age',
+        component: () => import("../views/ParamTest.vue"),
+        children: [
+
+            {
+                path: 'param',
+                name: 'Param',
+                component: () => import("../views/routerParams/RouterParams-param.vue")
+            },
+            {
+                path: 'query',
+                name: 'Query',
+                component: () => import("../views/routerParams/RouterParams-query.vue")
             },
         ]
     },

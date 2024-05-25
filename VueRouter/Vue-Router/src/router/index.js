@@ -55,7 +55,7 @@ const router = createRouter({
 
 
 
-//设置路由守卫
+//设置路由守卫，全局拦截，控制路由跳转
 // router.beforeEach((to, from) => {
 //     console.log('to', to)
 //     console.log('from', from)

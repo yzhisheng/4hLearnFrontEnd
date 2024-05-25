@@ -1,15 +1,25 @@
 <script setup>
+import httpUtil from './utils/http'
 import axios from 'axios'
 
+
+//创建Axios实例
+const instance = axios.create({
+  baseURL: 'http://43.139.239.29',
+  timeout: 1000 * 10,
+  headers: { 'X-Custom-Header': 'foobar' }
+});
+
+
 function testGet() {
-  axios.get("http://43.139.239.29/get").then(resp => {
+  instance.get("/get").then(resp => {
     console.log('resp', resp)
     console.log('data', resp.data)
   })
 }
 
 function testGetParam() {
-  axios.get("http://43.139.239.29/get", {
+  httpUtil.get("/get", {
     params: {
       id: 666,
       name: '凹凸曼'
@@ -20,14 +30,14 @@ function testGetParam() {
   })
 }
 function testPOST() {
-  axios.post("http://43.139.239.29/post").then(resp => {
+  instance.post("/post").then(resp => {
     console.log('resp', resp)
     console.log('data', resp.data)
   })
 }
 
 function testPOSTParam() {
-  axios.post("http://43.139.239.29/post", {
+  httpUtil.post("/post", {
     id: 777,
     name: '小怪兽'
   }).then(resp => {

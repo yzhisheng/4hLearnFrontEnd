@@ -53,6 +53,37 @@ const router = createRouter({
     routes,
 })
 
+
+
+//设置路由守卫
+// router.beforeEach((to, from) => {
+//     console.log('to', to)
+//     console.log('from', from)
+//     //1.return false 取消导航
+//     //2.return true 或不返回  继续导航
+//     //3.return '路径' 跳转指定路径
+//     return true;
+// })
+
+
+router.beforeEach(async (to, from) => {
+    console.log('to', to)
+    console.log('from', from)
+
+    //请求服务器获取数据
+    //await
+    if (to.path === '/hello') {
+        console.log('无权访问!')
+        return '/'
+    }
+
+    //1.return false 取消导航
+    //2.return true 或不返回  继续导航
+    //3.return '路径' 跳转指定路径
+})
+
+
+
 //3.导出路由器
 export default router;
 

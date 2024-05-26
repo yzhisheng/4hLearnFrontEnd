@@ -1,12 +1,13 @@
 <script setup>
 import httpUtil from './utils/http'
 import axios from 'axios'
+import { message } from 'ant-design-vue'
 
 
 //创建Axios实例
 const instance = axios.create({
   baseURL: 'http://43.139.239.29',
-  timeout: 1000 * 10,
+  timeout: 1000 * 1,
   headers: { 'X-Custom-Header': 'foobar' }
 });
 
@@ -46,6 +47,21 @@ function testPOSTParam() {
   })
 }
 
+function delay() {
+  instance.get('/delay/2').then(resp => {
+    console.log('resp', resp)
+  }).catch(err => {
+    console.log('err', err)
+    message.error(err.message)
+  })
+}
+
+function delay2() {
+  httpUtil.get('/delay/2').then(resp => {
+    console.log('resp', resp)
+  })
+}
+
 </script>
 
 <template>
@@ -61,6 +77,9 @@ function testPOSTParam() {
     <p>POST请求</p>
     <button @click="testPOST">POST</button>
     <button @click="testPOSTParam">POST Param</button>
+    <button @click="delay">原生delay 2s</button>
+
+    <button @click="delay2">配置拦截器delay 2s</button>
   </div>
 </template>
 
